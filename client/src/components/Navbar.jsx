@@ -4,12 +4,18 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import logo from "../../images/logo.png";
 
-import { TransactionContext } from "../context/TransactionContext";
+import { TransactionContext } from "../context/TransactionContextExport";
 import { shortenAddress } from "../utils/shortenAddress";
+import PropTypes from "prop-types";
 
 const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
 );
+
+NavBarItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  classprops: PropTypes.string,
+};
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
